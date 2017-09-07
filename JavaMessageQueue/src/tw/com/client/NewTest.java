@@ -8,7 +8,7 @@ import com.rabbitmq.client.ConnectionFactory;
 import com.rabbitmq.client.MessageProperties;
 
 public class NewTest {
-	private  final  static String TASK_QUEUE_NAME ="KevinTestQueue1";
+	private  final  static String TASK_QUEUE_NAME ="Kevin";
 	public static void main(String[] args) throws IOException, TimeoutException {
 		String userName = "admin";
 		String password = "password";

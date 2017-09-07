@@ -16,7 +16,7 @@ import com.rabbitmq.jms.admin.RMQConnectionFactory;
 import tw.com.client.JavaMessageService;
 
 public class ProductMessage {
-	private final static String TEST_QUEUE_NAME = "KevinTestQueue1";
+	private final static String TEST_QUEUE_NAME = "Ian";
 
 
 	public static void main(String[] args) throws Exception {

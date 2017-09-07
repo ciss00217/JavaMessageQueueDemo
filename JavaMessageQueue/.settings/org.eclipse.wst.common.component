@@ -19,6 +19,12 @@
 		<dependent-module deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/C:/Users/tibyby/.gradle/caches/modules-2/files-2.1/com.sun.messaging.mq/fscontext/4.4.2/357ce4ed293bdc8f421874870d04b1d035a0b8db/fscontext-4.4.2.jar">
 			<dependency-type>uses</dependency-type>
 		</dependent-module>
+		<dependent-module deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/C:/Users/tibyby/.gradle/caches/modules-2/files-2.1/org.apache.logging.log4j/log4j-api/2.9.0/e0dcd508dfc4864a2f5a1963d6ffad170d970375/log4j-api-2.9.0.jar">
+			<dependency-type>uses</dependency-type>
+		</dependent-module>
+		<dependent-module deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/C:/Users/tibyby/.gradle/caches/modules-2/files-2.1/org.apache.logging.log4j/log4j-core/2.9.0/52f6548ae1688e126c29b5dc400929dc0128615/log4j-core-2.9.0.jar">
+			<dependency-type>uses</dependency-type>
+		</dependent-module>
 		<dependent-module deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/C:/Users/tibyby/.gradle/caches/modules-2/files-2.1/org.springframework.boot/spring-boot-starter-activemq/1.5.6.RELEASE/e430cd944cab9e7aba10bbc0866d88f654e37240/spring-boot-starter-activemq-1.5.6.RELEASE.jar">
 			<dependency-type>uses</dependency-type>
 		</dependent-module>

@@ -2,8 +2,13 @@ package tw.com.client;
 
 import javax.jms.Connection;
 import javax.jms.Destination;
+import javax.jms.JMSException;
+import javax.jms.Message;
 import javax.jms.MessageConsumer;
+import javax.jms.MessageListener;
 import javax.jms.MessageProducer;
+import javax.jms.Queue;
+import javax.jms.QueueConnection;
 import javax.jms.Session;
 import javax.jms.TextMessage;
 
@@ -13,13 +18,12 @@ import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 import com.rabbitmq.jms.admin.RMQConnectionFactory;
-import com.sun.jndi.fscontext.RefFSContextFactory;
 
-import tw.com.consumer.ConsumerMessageListener;
+import tw.com.consumer.ConsumerMessageListener11;
 
-public class JavaMessageService {
+public class JavaMessageService11 {
 	private final static String QUEUE_NAME = "RobinQueue";
-	private final static String TEST_QUEUE_NAME = "Kevin";
+	private final static String TEST_QUEUE_NAME = "Kevin222";
 	private static final Log logger = LogFactory.getLog(JavaMessageService.class);
 	private static final String USERNAME = "admin";
 	private static final String PASSWORD = "password";
@@ -37,14 +41,14 @@ public class JavaMessageService {
 			Connection connection = rMQConnectionFactory.createConnection();
 			
 			connection.start();
-		
+
 			Session session = connection.createSession(false, Session.AUTO_ACKNOWLEDGE);
 
 			Destination destination = session.createQueue(TEST_QUEUE_NAME);
-			
+
 			MessageConsumer messageConsumer = session.createConsumer(destination);
 
-			ConsumerMessageListener consumerMessageListener = new ConsumerMessageListener();
+			ConsumerMessageListener11 consumerMessageListener = new ConsumerMessageListener11();
 
 			messageConsumer.setMessageListener(consumerMessageListener);
 
