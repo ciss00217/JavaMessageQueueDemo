@@ -13,6 +13,7 @@ import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 import com.rabbitmq.jms.admin.RMQConnectionFactory;
+import com.sun.jndi.fscontext.RefFSContextFactory;
 
 import tw.com.consumer.ConsumerMessageListener;
 
@@ -39,8 +40,8 @@ public class JavaMessageService {
 		
 			Session session = connection.createSession(false, Session.AUTO_ACKNOWLEDGE);
 
-			Destination destination = session.createQueue(TEST_QUEUE_NAME);
-
+			Destination destination = (Destination) context.getBean("jmsDestination");
+			
 			MessageConsumer messageConsumer = session.createConsumer(destination);
 
 			ConsumerMessageListener consumerMessageListener = new ConsumerMessageListener();

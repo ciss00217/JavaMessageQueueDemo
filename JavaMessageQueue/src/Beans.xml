@@ -6,31 +6,30 @@
 	<bean id="helloWorld" class="tw.com.client.HelloWorld">
 		<property name="message" value="Hello World!" />
 	</bean>
-	
-	<bean id="jmsConnectionFactory" class="com.rabbitmq.jms.admin.RMQConnectionFactory" >
-      <property name="username" value="admin" />
-      <property name="password" value="password" />
-      <property name="virtualHost" value="/" />
-      <property name="host" value="192.168.112.199" />
-      <property name="port" value="5672" />
-    </bean>
-    
-    <bean id="jmsDestination" class="com.rabbitmq.jms.admin.RMQDestination" >
-	     <property name="destinationName" value="myQueue" />
-	     <property name="amqp"            value="true" />
-	     <property name="amqpQueueName"   value="rabbitQueueName" />
-    </bean>
 
-	<!-- <Resource name="jms/ConnectionFactory" type="javax.jms.ConnectionFactory"
-		factory="com.rabbitmq.jms.admin.RMQObjectFactory" username="guest"
-		password="guest" virtualHost="/" host="localhost" ssl="true" />-->
-
-	<!--<bean id="jmsConnectionFactory" class="javax.jms.ConnectionFactory">
+	<bean id="jmsConnectionFactory" class="com.rabbitmq.jms.admin.RMQConnectionFactory">
 		<property name="username" value="admin" />
 		<property name="password" value="password" />
 		<property name="virtualHost" value="/" />
-		<property name="host" value="192.168.112.199:5672" />
-	</bean>-->
+		<property name="host" value="192.168.112.199" />
+		<property name="port" value="5672" />
+	</bean>
+
+	<bean id="jmsDestination" class="com.rabbitmq.jms.admin.RMQDestination">
+		<property name="destinationName" value="Kevin1" />
+		<property name="amqp" value="true" />
+		<property name="amqpQueueName" value="Kevin1" />
+		<property name="amqpExchangeName" value="jms.durable.queues" />
+	</bean>
+
+	<!-- <Resource name="jms/ConnectionFactory" type="javax.jms.ConnectionFactory" 
+		factory="com.rabbitmq.jms.admin.RMQObjectFactory" username="guest" password="guest" 
+		virtualHost="/" host="localhost" ssl="true" /> -->
+
+	<!--<bean id="jmsConnectionFactory" class="javax.jms.ConnectionFactory"> 
+		<property name="username" value="admin" /> <property name="password" value="password" 
+		/> <property name="virtualHost" value="/" /> <property name="host" value="192.168.112.199:5672" 
+		/> </bean> -->
 
 	<!-- <bean id="myTargetConnectionFactory" class="org.springframework.jndi.JndiObjectFactoryBean"> 
 		<property name="jndiName" value="java:comp/env/jms/mycf" /> </bean> <bean 

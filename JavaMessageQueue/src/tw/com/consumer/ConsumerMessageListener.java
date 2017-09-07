@@ -9,6 +9,17 @@ public class ConsumerMessageListener implements MessageListener {
 
 	public void onMessage(Message message) {
 		// 這裡我們知道生產者發送的就是一個純文本消息，所以這裡可以直接進行強制轉換，或者直接把onMessage方法的參數改成Message的子類TextMessage
+		
+	/*	
+		try {
+			String BodyType=message.getJMSType();
+			
+			System.out.println("BodyType:"+BodyType);
+		} catch (JMSException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		}*/
+		
 		TextMessage textMsg = (TextMessage) message;
 
 		try {
