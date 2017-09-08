@@ -11,31 +11,29 @@ import org.apache.logging.log4j.Logger;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
-import com.rabbitmq.jms.admin.RMQConnectionFactory;
-
 public class ConsumerMessage {
 	private static final Logger logger = LogManager.getLogger(ConsumerMessage.class);
-	private final static String TEST_QUEUE_NAME = "KevinReceive";
 
 	public void start(Session session, Destination destination, Connection connection) {
 
 		try {
-			connection.start();
-
-			ConsumerMessageListener11 consumerMessageListener = new ConsumerMessageListener11();
 
 			MessageConsumer messageConsumer = session.createConsumer(destination);
 
-			messageConsumer.setMessageListener(consumerMessageListener);
+			ConsumerMessageListener consumerMessageListener = new ConsumerMessageListener(messageConsumer);
+
+			connection.start();
+			consumerMessageListener.start();
+
 		} catch (Exception e) {
 
+			logger.debug("ERROR:" + e.getMessage());
 		}
 	}
 
 	public void createConsumer(Session session, Destination destination, Connection connection) {
 
 		try {
-			connection.start();
 
 			MessageConsumer messageConsumer = session.createConsumer(destination);
 			ConsumerMessageListener consumerMessageListener = new ConsumerMessageListener(messageConsumer);
@@ -52,15 +50,15 @@ public class ConsumerMessage {
 
 			ApplicationContext context = new ClassPathXmlApplicationContext("Beans.xml");
 
-			ConnectionFactory rMQConnectionFactory = (RMQConnectionFactory) context.getBean("jmsConnectionFactory");
+			ConnectionFactory jmsConnectionFactory = (ConnectionFactory) context.getBean("jmsConnectionFactory");
 
-			Connection connection = rMQConnectionFactory.createConnection();
+			Destination jmsDestination = (Destination) context.getBean("jmsDestination");
+
+			Connection connection = jmsConnectionFactory.createConnection();
 
 			Session session = connection.createSession(false, Session.AUTO_ACKNOWLEDGE);
 
-			Destination destination = session.createQueue(TEST_QUEUE_NAME);
-
-			MessageConsumer messageConsumer = session.createConsumer(destination);
+			MessageConsumer messageConsumer = session.createConsumer(jmsDestination);
 
 			ConsumerMessageListener consumerMessageListener = new ConsumerMessageListener(messageConsumer);
 
@@ -69,7 +67,7 @@ public class ConsumerMessage {
 
 		} catch (Exception e) {
 
-			System.out.println("ERROR:" + e.getMessage());
+			logger.debug("ERROR:" + e.getMessage());
 		}
 
 	}

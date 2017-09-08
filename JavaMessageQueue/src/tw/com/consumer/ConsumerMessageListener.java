@@ -12,40 +12,46 @@ import javax.jms.MessageListener;
 import javax.jms.Queue;
 import javax.jms.QueueBrowser;
 import javax.jms.Session;
-import javax.jms.TextMessage;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
-import com.rabbitmq.jms.admin.RMQConnectionFactory;
+import tw.com.jms.util.Util;
 
 public class ConsumerMessageListener extends Thread implements MessageListener {
 	private static final Logger logger = LogManager.getLogger(ConsumerMessageListener.class);
-	private final static String TEST_QUEUE_NAME = "KevinReceive";
 
 	private MessageConsumer messageConsumer;
 	private Connection connection;
 	private Destination destination;
-	private ConnectionFactory ConnectionFactory;
+	private ConnectionFactory connectionFactory;
 	private ApplicationContext context;
 	private Session session;
 	private QueueBrowser queueBrowser;
 	private Enumeration enumeration;
 
 	public ConsumerMessageListener(MessageConsumer messageConsumer) {
+		try {
+			init();
+		} catch (JMSException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		this.messageConsumer = messageConsumer;
 	}
 
+	@Override
 	public void onMessage(Message message) {
 
-		TextMessage textMsg = (TextMessage) message;
+		String text = "";
 		try {
-			logger.debug("消息內容是：" + textMsg.getText());
+			text = Util.convertMsg(message);
 		} catch (JMSException e) {
 			e.printStackTrace();
 		}
+		logger.debug("消息內容:" + text);
 	}
 
 	private String poll() {
@@ -54,18 +60,15 @@ public class ConsumerMessageListener extends Thread implements MessageListener {
 		try {
 			Message message = messageConsumer.receive();
 
-			if (message instanceof TextMessage) {
-				TextMessage m = (TextMessage) message;
-				pollText = m.getText();
-			}
+			pollText = Util.convertMsg(message);
 
-		} catch (JMSException e) {
+		} catch (Exception e) {
 			logger.debug("receive error" + e.getMessage());
-			/*try {
-				session.rollback();
-			} catch (JMSException e1) {
-				logger.debug("rollback error" + e.getMessage());
-			}*/
+
+			/*
+			 * try { session.rollback(); } catch (JMSException e1) {
+			 * logger.debug("rollback error" + e.getMessage()); }
+			 */
 		}
 
 		return pollText;
@@ -76,59 +79,66 @@ public class ConsumerMessageListener extends Thread implements MessageListener {
 		if (context == null) {
 			context = new ClassPathXmlApplicationContext("Beans.xml");
 		}
-		if (ConnectionFactory == null) {
-			ConnectionFactory = (RMQConnectionFactory) context.getBean("jmsConnectionFactory");
+		if (connectionFactory == null) {
+			connectionFactory = (ConnectionFactory) context.getBean("jmsConnectionFactory");
 		}
 		if (connection == null) {
-			connection = ConnectionFactory.createConnection();
+			connection = connectionFactory.createConnection();
+			connection.start();
 		}
-		connection.start();
 
 		if (session == null) {
 			session = connection.createSession(false, Session.AUTO_ACKNOWLEDGE);
 		}
+
 		if (destination == null) {
-			destination = session.createQueue(TEST_QUEUE_NAME);
+			destination = (Destination) context.getBean("jmsDestination");
 		}
+
 	}
 
 	@Override
 	public void run() {
+		String text;
+
 		while (true) {
 			try {
-		
-				System.out.println("Listener");
-				init();
+				logger.debug("Listener");
 
 				queueBrowser = session.createBrowser((Queue) destination);
 
 				enumeration = queueBrowser.getEnumeration();
 
 				if (enumeration.hasMoreElements()) {
-					Object msg = enumeration.nextElement();
-					if (msg instanceof TextMessage) {
-						TextMessage m = (TextMessage) msg;
-						String text = m.getText();
-						System.out.println("peek:" + text);
-						logger.debug("peek:" + text);
-					}
+					Message message = (Message) enumeration.nextElement();
+
+					text = Util.convertMsg(message);
+					logger.debug("peek:" + text);
 
 					String pollText = poll();
-					System.out.println("poll:" + pollText);
-					//logger.debug("poll:" + pollText);
+					logger.debug("poll:" + pollText);
 
 				} else {
 					try {
 						sleep(3000);
 					} catch (InterruptedException e) {
-						System.out.println("sleep： error:" + e.getMessage());
-						//logger.debug("sleep： error:" + e.getMessage());
+						logger.debug("sleep： error:" + e.getMessage());
 					}
 
 				}
 
 			} catch (JMSException jex) {
 				logger.debug("Error in run()", jex);
+			} catch (NullPointerException e2) {
+
+				try {
+					init();
+				} catch (JMSException e) {
+					e.printStackTrace();
+					logger.debug("Error JMSException reStart", e.getMessage());
+				}
+
+				logger.debug("NullPointerException reinit error:", e2.getMessage());
 			}
 
 		}
