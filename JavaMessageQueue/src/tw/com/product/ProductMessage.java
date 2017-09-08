@@ -16,7 +16,7 @@ import com.rabbitmq.jms.admin.RMQConnectionFactory;
 import tw.com.client.JavaMessageService;
 
 public class ProductMessage {
-	private final static String TEST_QUEUE_NAME = "Ian";
+	private final static String TEST_QUEUE_NAME = "Kevin";
 
 
 	public static void main(String[] args) throws Exception {
@@ -38,7 +38,7 @@ public class ProductMessage {
 			MessageProducer producer = session.createProducer(destination);
 
 			TextMessage textMessage = session.createTextMessage();
-			for (int i = 0; i < 10; i++) {
+			for (int i = 1; i <= 100; i++) {
 				textMessage.setText("Hello!JMS!" + i);
 				producer.send(textMessage);
 			}

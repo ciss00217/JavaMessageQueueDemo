@@ -15,7 +15,7 @@ import com.rabbitmq.jms.admin.RMQConnectionFactory;
 
 public class ConsumerMessage {
 	private static final Logger logger = LogManager.getLogger(ConsumerMessage.class);
-	private final static String TEST_QUEUE_NAME = "Kevin";
+	private final static String TEST_QUEUE_NAME = "KevinReceive";
 
 	public void start(Session session, Destination destination, Connection connection) {
 
@@ -37,11 +37,11 @@ public class ConsumerMessage {
 		try {
 			connection.start();
 
-			ConsumerMessageListener consumerMessageListener = new ConsumerMessageListener();
-
 			MessageConsumer messageConsumer = session.createConsumer(destination);
+			ConsumerMessageListener consumerMessageListener = new ConsumerMessageListener(messageConsumer);
 
 			messageConsumer.setMessageListener(consumerMessageListener);
+			connection.start();
 		} catch (Exception e) {
 
 		}
@@ -62,13 +62,10 @@ public class ConsumerMessage {
 
 			MessageConsumer messageConsumer = session.createConsumer(destination);
 
-			ConsumerMessageListener consumerMessageListener = new ConsumerMessageListener();
+			ConsumerMessageListener consumerMessageListener = new ConsumerMessageListener(messageConsumer);
 
-			
-			//  messageConsumer.setMessageListener(consumerMessageListener);
 			connection.start();
-			messageConsumer.setMessageListener(consumerMessageListener);
-			
+			consumerMessageListener.start();
 
 		} catch (Exception e) {
 

@@ -23,7 +23,7 @@ import com.rabbitmq.jms.admin.RMQConnectionFactory;
 
 public class ConsumerMessageListener extends Thread implements MessageListener {
 	private static final Logger logger = LogManager.getLogger(ConsumerMessageListener.class);
-	private final static String TEST_QUEUE_NAME = "Kevin";
+	private final static String TEST_QUEUE_NAME = "KevinReceive";
 
 	private MessageConsumer messageConsumer;
 	private Connection connection;
@@ -33,6 +33,10 @@ public class ConsumerMessageListener extends Thread implements MessageListener {
 	private Session session;
 	private QueueBrowser queueBrowser;
 	private Enumeration enumeration;
+
+	public ConsumerMessageListener(MessageConsumer messageConsumer) {
+		this.messageConsumer = messageConsumer;
+	}
 
 	public void onMessage(Message message) {
 
@@ -45,11 +49,28 @@ public class ConsumerMessageListener extends Thread implements MessageListener {
 	}
 
 	private String poll() {
+		String pollText = "";
 
-		return null;
+		try {
+			Message message = messageConsumer.receive();
+
+			if (message instanceof TextMessage) {
+				TextMessage m = (TextMessage) message;
+				pollText = m.getText();
+			}
+
+		} catch (JMSException e) {
+			logger.debug("receive error" + e.getMessage());
+			/*try {
+				session.rollback();
+			} catch (JMSException e1) {
+				logger.debug("rollback error" + e.getMessage());
+			}*/
+		}
+
+		return pollText;
 	}
 
-	
 	private void init() throws JMSException {
 
 		if (context == null) {
@@ -75,8 +96,8 @@ public class ConsumerMessageListener extends Thread implements MessageListener {
 	public void run() {
 		while (true) {
 			try {
-				logger.debug("Listener");
-
+		
+				System.out.println("Listener");
 				init();
 
 				queueBrowser = session.createBrowser((Queue) destination);
@@ -88,16 +109,20 @@ public class ConsumerMessageListener extends Thread implements MessageListener {
 					if (msg instanceof TextMessage) {
 						TextMessage m = (TextMessage) msg;
 						String text = m.getText();
+						System.out.println("peek:" + text);
 						logger.debug("peek:" + text);
 					}
-					
-					
-					
+
+					String pollText = poll();
+					System.out.println("poll:" + pollText);
+					//logger.debug("poll:" + pollText);
+
 				} else {
 					try {
 						sleep(3000);
 					} catch (InterruptedException e) {
-						logger.debug("sleep： error:" + e.getMessage());
+						System.out.println("sleep： error:" + e.getMessage());
+						//logger.debug("sleep： error:" + e.getMessage());
 					}
 
 				}

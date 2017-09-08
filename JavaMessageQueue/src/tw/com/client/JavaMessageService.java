@@ -44,7 +44,7 @@ public class JavaMessageService {
 			
 			MessageConsumer messageConsumer = session.createConsumer(destination);
 
-			ConsumerMessageListener consumerMessageListener = new ConsumerMessageListener();
+			ConsumerMessageListener consumerMessageListener = new ConsumerMessageListener(messageConsumer);
 
 			messageConsumer.setMessageListener(consumerMessageListener);
 
