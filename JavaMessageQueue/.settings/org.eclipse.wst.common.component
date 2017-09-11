@@ -40,6 +40,9 @@
 		<dependent-module deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/C:/Users/tibyby/.gradle/caches/modules-2/files-2.1/org.apache.cxf/cxf-rt-transports-http/3.1.12/3f0d7bb7971e8b0c9ce135f81debca4b5ebcd65f/cxf-rt-transports-http-3.1.12.jar">
 			<dependency-type>uses</dependency-type>
 		</dependent-module>
+		<dependent-module deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/C:/Users/tibyby/.gradle/caches/modules-2/files-2.1/org.apache.cxf/cxf-rt-transports-http-jetty/3.1.12/b9d38af1fface8f1165d16fec8e6f479a97a2301/cxf-rt-transports-http-jetty-3.1.12.jar">
+			<dependency-type>uses</dependency-type>
+		</dependent-module>
 		<dependent-module deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/C:/Users/tibyby/.gradle/caches/modules-2/files-2.1/org.springframework/spring-aop/4.3.10.RELEASE/3a8c23246045e5e1dbd7d91354741b165e997a88/spring-aop-4.3.10.RELEASE.jar">
 			<dependency-type>uses</dependency-type>
 		</dependent-module>
@@ -97,6 +100,24 @@
 		<dependent-module deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/C:/Users/tibyby/.gradle/caches/modules-2/files-2.1/org.apache.cxf/cxf-rt-ws-addr/3.1.12/aea598a46cfb69e9cb61c06684461b225e304e5c/cxf-rt-ws-addr-3.1.12.jar">
 			<dependency-type>uses</dependency-type>
 		</dependent-module>
+		<dependent-module deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/C:/Users/tibyby/.gradle/caches/modules-2/files-2.1/org.eclipse.jetty/jetty-server/9.4.6.v20170531/afda653f00267fb8b501cafd1cf5cdd1615602a2/jetty-server-9.4.6.v20170531.jar">
+			<dependency-type>uses</dependency-type>
+		</dependent-module>
+		<dependent-module deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/C:/Users/tibyby/.gradle/caches/modules-2/files-2.1/org.eclipse.jetty/jetty-util/9.4.6.v20170531/78628ec5cfafbb5b8085342322515c65fadfa1cc/jetty-util-9.4.6.v20170531.jar">
+			<dependency-type>uses</dependency-type>
+		</dependent-module>
+		<dependent-module deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/C:/Users/tibyby/.gradle/caches/modules-2/files-2.1/org.eclipse.jetty/jetty-io/9.4.6.v20170531/69cdaaac75739eff9ccb4c61f87e4fa3ba280f9/jetty-io-9.4.6.v20170531.jar">
+			<dependency-type>uses</dependency-type>
+		</dependent-module>
+		<dependent-module deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/C:/Users/tibyby/.gradle/caches/modules-2/files-2.1/org.eclipse.jetty/jetty-security/9.4.6.v20170531/6c4cdac99130d887abc6fa6645adcd033f763d02/jetty-security-9.4.6.v20170531.jar">
+			<dependency-type>uses</dependency-type>
+		</dependent-module>
+		<dependent-module deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/C:/Users/tibyby/.gradle/caches/modules-2/files-2.1/org.eclipse.jetty/jetty-continuation/9.4.6.v20170531/7a3e4ec4d2b7d629707d8e3107bb5ee31f7d2158/jetty-continuation-9.4.6.v20170531.jar">
+			<dependency-type>uses</dependency-type>
+		</dependent-module>
+		<dependent-module deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/C:/Users/tibyby/.gradle/caches/modules-2/files-2.1/org.eclipse.jetty/jetty-http/9.4.6.v20170531/6c2dd034fc4128ea65f2d0199473cbfb80aeb428/jetty-http-9.4.6.v20170531.jar">
+			<dependency-type>uses</dependency-type>
+		</dependent-module>
 		<dependent-module deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/C:/Users/tibyby/.gradle/caches/modules-2/files-2.1/org.springframework.boot/spring-boot/1.5.6.RELEASE/a6e13da038c6eb8b8793795b3189d5ff3f39caa0/spring-boot-1.5.6.RELEASE.jar">
 			<dependency-type>uses</dependency-type>
 		</dependent-module>
@@ -134,6 +155,9 @@
 			<dependency-type>uses</dependency-type>
 		</dependent-module>
 		<dependent-module deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/C:/Users/tibyby/.gradle/caches/modules-2/files-2.1/org.apache.cxf/cxf-rt-ws-policy/3.1.12/18364d215dc9df5821b118b0387f3aef4ebd1b8d/cxf-rt-ws-policy-3.1.12.jar">
+			<dependency-type>uses</dependency-type>
+		</dependent-module>
+		<dependent-module deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/C:/Users/tibyby/.gradle/caches/modules-2/files-2.1/javax.servlet/javax.servlet-api/3.1.0/3cd63d075497751784b2fa84be59432f4905bf7c/javax.servlet-api-3.1.0.jar">
 			<dependency-type>uses</dependency-type>
 		</dependent-module>
 		<dependent-module deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/C:/Users/tibyby/.gradle/caches/modules-2/files-2.1/ch.qos.logback/logback-classic/1.1.11/ccedfbacef4a6515d2983e3f89ed753d5d4fb665/logback-classic-1.1.11.jar">
