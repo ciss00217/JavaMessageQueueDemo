@@ -34,6 +34,9 @@
 		<dependent-module deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/C:/Users/tibyby/.gradle/caches/modules-2/files-2.1/com.fasterxml.jackson.core/jackson-databind/2.8.9/4dfca3975be3c1a98eacb829e70f02e9a71bc159/jackson-databind-2.8.9.jar">
 			<dependency-type>uses</dependency-type>
 		</dependent-module>
+		<dependent-module deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/C:/Users/tibyby/.gradle/caches/modules-2/files-2.1/org.apache.cxf/cxf-rt-frontend-jaxws/3.1.12/b692298ec0df9920732e4248c52b136515c5b286/cxf-rt-frontend-jaxws-3.1.12.jar">
+			<dependency-type>uses</dependency-type>
+		</dependent-module>
 		<dependent-module deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/C:/Users/tibyby/.gradle/caches/modules-2/files-2.1/org.springframework/spring-aop/4.3.10.RELEASE/3a8c23246045e5e1dbd7d91354741b165e997a88/spring-aop-4.3.10.RELEASE.jar">
 			<dependency-type>uses</dependency-type>
 		</dependent-module>
@@ -70,6 +73,27 @@
 		<dependent-module deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/C:/Users/tibyby/.gradle/caches/modules-2/files-2.1/com.fasterxml.jackson.core/jackson-core/2.8.9/569b1752705da98f49aabe2911cc956ff7d8ed9d/jackson-core-2.8.9.jar">
 			<dependency-type>uses</dependency-type>
 		</dependent-module>
+		<dependent-module deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/C:/Users/tibyby/.gradle/caches/modules-2/files-2.1/xml-resolver/xml-resolver/1.2/3d0f97750b3a03e0971831566067754ba4bfd68c/xml-resolver-1.2.jar">
+			<dependency-type>uses</dependency-type>
+		</dependent-module>
+		<dependent-module deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/C:/Users/tibyby/.gradle/caches/modules-2/files-2.1/org.ow2.asm/asm/5.0.4/da08b8cce7bbf903602a25a3a163ae252435795/asm-5.0.4.jar">
+			<dependency-type>uses</dependency-type>
+		</dependent-module>
+		<dependent-module deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/C:/Users/tibyby/.gradle/caches/modules-2/files-2.1/org.apache.cxf/cxf-core/3.1.12/ff07181b388f099e9e7095cbe3d586a391d84dc3/cxf-core-3.1.12.jar">
+			<dependency-type>uses</dependency-type>
+		</dependent-module>
+		<dependent-module deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/C:/Users/tibyby/.gradle/caches/modules-2/files-2.1/org.apache.cxf/cxf-rt-bindings-soap/3.1.12/593a4f533452842d76ced8c23b230e0ed0e033db/cxf-rt-bindings-soap-3.1.12.jar">
+			<dependency-type>uses</dependency-type>
+		</dependent-module>
+		<dependent-module deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/C:/Users/tibyby/.gradle/caches/modules-2/files-2.1/org.apache.cxf/cxf-rt-bindings-xml/3.1.12/d7cc73475b7fd4be85b67d94c980da9b89cc365b/cxf-rt-bindings-xml-3.1.12.jar">
+			<dependency-type>uses</dependency-type>
+		</dependent-module>
+		<dependent-module deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/C:/Users/tibyby/.gradle/caches/modules-2/files-2.1/org.apache.cxf/cxf-rt-frontend-simple/3.1.12/26a89cf3181e23b31ea84e3baf3006e1c7699de7/cxf-rt-frontend-simple-3.1.12.jar">
+			<dependency-type>uses</dependency-type>
+		</dependent-module>
+		<dependent-module deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/C:/Users/tibyby/.gradle/caches/modules-2/files-2.1/org.apache.cxf/cxf-rt-ws-addr/3.1.12/aea598a46cfb69e9cb61c06684461b225e304e5c/cxf-rt-ws-addr-3.1.12.jar">
+			<dependency-type>uses</dependency-type>
+		</dependent-module>
 		<dependent-module deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/C:/Users/tibyby/.gradle/caches/modules-2/files-2.1/org.springframework.boot/spring-boot/1.5.6.RELEASE/a6e13da038c6eb8b8793795b3189d5ff3f39caa0/spring-boot-1.5.6.RELEASE.jar">
 			<dependency-type>uses</dependency-type>
 		</dependent-module>
@@ -94,6 +118,21 @@
 		<dependent-module deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/C:/Users/tibyby/.gradle/caches/modules-2/files-2.1/org.apache.geronimo.specs/geronimo-j2ee-management_1.1_spec/1.0.1/5372615b0c04c1913c95c34a0414cef720ca2855/geronimo-j2ee-management_1.1_spec-1.0.1.jar">
 			<dependency-type>uses</dependency-type>
 		</dependent-module>
+		<dependent-module deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/C:/Users/tibyby/.gradle/caches/modules-2/files-2.1/org.codehaus.woodstox/woodstox-core-asl/4.4.1/84fee5eb1a4a1cefe65b6883c73b3fa83be3c1a1/woodstox-core-asl-4.4.1.jar">
+			<dependency-type>uses</dependency-type>
+		</dependent-module>
+		<dependent-module deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/C:/Users/tibyby/.gradle/caches/modules-2/files-2.1/org.apache.ws.xmlschema/xmlschema-core/2.2.2/3346ea4712a8bc80dbc1877628bfca1d6c4d55ef/xmlschema-core-2.2.2.jar">
+			<dependency-type>uses</dependency-type>
+		</dependent-module>
+		<dependent-module deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/C:/Users/tibyby/.gradle/caches/modules-2/files-2.1/org.apache.cxf/cxf-rt-wsdl/3.1.12/cc2bf92c9818b12aa9a8383297c15b5ee51f8a44/cxf-rt-wsdl-3.1.12.jar">
+			<dependency-type>uses</dependency-type>
+		</dependent-module>
+		<dependent-module deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/C:/Users/tibyby/.gradle/caches/modules-2/files-2.1/org.apache.cxf/cxf-rt-databinding-jaxb/3.1.12/c0a312c95af2197a0f0496f903442ece0c3d6cc6/cxf-rt-databinding-jaxb-3.1.12.jar">
+			<dependency-type>uses</dependency-type>
+		</dependent-module>
+		<dependent-module deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/C:/Users/tibyby/.gradle/caches/modules-2/files-2.1/org.apache.cxf/cxf-rt-ws-policy/3.1.12/18364d215dc9df5821b118b0387f3aef4ebd1b8d/cxf-rt-ws-policy-3.1.12.jar">
+			<dependency-type>uses</dependency-type>
+		</dependent-module>
 		<dependent-module deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/C:/Users/tibyby/.gradle/caches/modules-2/files-2.1/ch.qos.logback/logback-classic/1.1.11/ccedfbacef4a6515d2983e3f89ed753d5d4fb665/logback-classic-1.1.11.jar">
 			<dependency-type>uses</dependency-type>
 		</dependent-module>
@@ -104,6 +143,21 @@
 			<dependency-type>uses</dependency-type>
 		</dependent-module>
 		<dependent-module deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/C:/Users/tibyby/.gradle/caches/modules-2/files-2.1/org.slf4j/log4j-over-slf4j/1.7.25/a87bb47468f47ee7aabbd54f93e133d4215769c3/log4j-over-slf4j-1.7.25.jar">
+			<dependency-type>uses</dependency-type>
+		</dependent-module>
+		<dependent-module deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/C:/Users/tibyby/.gradle/caches/modules-2/files-2.1/org.codehaus.woodstox/stax2-api/3.1.4/ac19014b1e6a7c08aad07fe114af792676b685b7/stax2-api-3.1.4.jar">
+			<dependency-type>uses</dependency-type>
+		</dependent-module>
+		<dependent-module deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/C:/Users/tibyby/.gradle/caches/modules-2/files-2.1/wsdl4j/wsdl4j/1.6.3/6d106a6845a3d3477a1560008479312888e94f2f/wsdl4j-1.6.3.jar">
+			<dependency-type>uses</dependency-type>
+		</dependent-module>
+		<dependent-module deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/C:/Users/tibyby/.gradle/caches/modules-2/files-2.1/com.sun.xml.bind/jaxb-impl/2.2.11/a49ce57aee680f9435f49ba6ef427d38c93247a6/jaxb-impl-2.2.11.jar">
+			<dependency-type>uses</dependency-type>
+		</dependent-module>
+		<dependent-module deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/C:/Users/tibyby/.gradle/caches/modules-2/files-2.1/com.sun.xml.bind/jaxb-core/2.2.11/c3f87d654f8d5943cd08592f3f758856544d279a/jaxb-core-2.2.11.jar">
+			<dependency-type>uses</dependency-type>
+		</dependent-module>
+		<dependent-module deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/C:/Users/tibyby/.gradle/caches/modules-2/files-2.1/org.apache.neethi/neethi/3.0.3/ee37a38bbf9f355ee88ba554a85c9220b75ba500/neethi-3.0.3.jar">
 			<dependency-type>uses</dependency-type>
 		</dependent-module>
 		<dependent-module deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/C:/Users/tibyby/.gradle/caches/modules-2/files-2.1/ch.qos.logback/logback-core/1.1.11/88b8df40340eed549fb07e2613879bf6b006704d/logback-core-1.1.11.jar">
