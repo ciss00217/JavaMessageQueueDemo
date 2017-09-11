@@ -37,6 +37,9 @@
 		<dependent-module deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/C:/Users/tibyby/.gradle/caches/modules-2/files-2.1/org.apache.cxf/cxf-rt-frontend-jaxws/3.1.12/b692298ec0df9920732e4248c52b136515c5b286/cxf-rt-frontend-jaxws-3.1.12.jar">
 			<dependency-type>uses</dependency-type>
 		</dependent-module>
+		<dependent-module deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/C:/Users/tibyby/.gradle/caches/modules-2/files-2.1/org.apache.cxf/cxf-rt-transports-http/3.1.12/3f0d7bb7971e8b0c9ce135f81debca4b5ebcd65f/cxf-rt-transports-http-3.1.12.jar">
+			<dependency-type>uses</dependency-type>
+		</dependent-module>
 		<dependent-module deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/C:/Users/tibyby/.gradle/caches/modules-2/files-2.1/org.springframework/spring-aop/4.3.10.RELEASE/3a8c23246045e5e1dbd7d91354741b165e997a88/spring-aop-4.3.10.RELEASE.jar">
 			<dependency-type>uses</dependency-type>
 		</dependent-module>
